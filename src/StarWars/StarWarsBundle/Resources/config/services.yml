@@ -1,0 +1,8 @@
+parameters:
+#    star_wars.example.class: StarWars\StarWarsBundle\Example
+
+services:
+    star_wars.temple_voter:
+        class: StarWars\StarWarsBundle\Security\Voter\TempleVoter
+        tags:
+            - { name: security.voter }

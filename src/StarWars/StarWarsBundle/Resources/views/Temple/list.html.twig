@@ -1,0 +1,12 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    <p>Liste des temples :</p>
+    <ul>
+        {% for temple in temples %}
+            <li><a href="{{ path('star_wars_temple_show', {'id': temple.id}) }}">Voir le temple {{ temple.color }}</a></li>
+        {% else %}
+            <li>Y'a pas de temple, mon pote.</li>
+        {% endfor %}
+    </ul>
+{% endblock %}

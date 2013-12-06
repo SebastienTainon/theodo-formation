@@ -1,0 +1,71 @@
+<?php
+
+namespace StarWars\StarWarsBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+/**
+ * Theodoer
+ *
+ * @ORM\Table(name="theodoer")
+ * @ORM\Entity
+ */
+class Theodoer
+{
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="id", type="integer")
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     */
+    private $id;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="first_name", type="string", length=255)
+     */
+    private $firstName;
+
+    /**
+     * @var Lightsaber
+     *
+     * @ORM\OneToMany(targetEntity="Lightsaber", mappedBy="theodoer")
+     */
+    private $lightsabers;
+
+    /**
+     * Get id
+     *
+     * @return integer 
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * Set firstName
+     *
+     * @param string $firstName
+     *
+     * @return Theodoer
+     */
+    public function setFirstName($firstName)
+    {
+        $this->firstName = $firstName;
+    
+        return $this;
+    }
+
+    /**
+     * Get firstName
+     *
+     * @return string 
+     */
+    public function getFirstName()
+    {
+        return $this->firstName;
+    }
+}

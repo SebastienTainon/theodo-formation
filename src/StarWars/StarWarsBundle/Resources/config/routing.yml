@@ -1,0 +1,7 @@
+star_wars_temple_list:
+    pattern:  /
+    defaults: { _controller: StarWarsBundle:Temple:list }
+
+star_wars_temple_show:
+    pattern:  /temple/{id}
+    defaults: { _controller: StarWarsBundle:Temple:show }
